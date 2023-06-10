@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <title>TunedTV</title>
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <div class="app">
     <header>
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo">
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="video-on-demand.html">Video On Demand</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="about">
+      <a class="logo" href="/"><img src="img/updated-condensed.jpg" alt="Logo"></a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="video-on-demand.html">Video On Demand</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="video-on-demand.html">Video On Demand</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/mobile.js"></script>
+<div class="about">
       <h1>About</h1>
       <p>This is the about page of my website.</p>
     </div>

@@ -4,36 +4,74 @@
   <meta charset="UTF-8">
   <title>TunedTV</title>
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Include Video.js CSS -->
+    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+  
+    <!-- Include Video.js and Twitch Embed Player JavaScript libraries -->
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 </head>
 <body>
-  <div class="app">
-    <header>
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo">
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="video-on-demand.html">Video On Demand</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="home">
-      <h1>Welcome to Sim Racing Live!</h1>
-      <!-- Main feed content goes here -->
+  <header>
+    <a class="logo" href="/"><img src="img/updated-condensed.jpg" alt="Logo"></a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="video-on-demand.html">Video On Demand</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="video-on-demand.html">Video On Demand</a>
     </div>
-
-    <div id="live-chat">
-      <!-- Live chat component goes here -->
-    </div>
-
-    <footer>
-      &copy; 2023 TunedTV. All rights reserved.
-    </footer>
   </div>
+  <script type="text/javascript" src="/js/mobile.js"></script>
+  <div class="home">
+    <h1>Welcome to TunedTV</h1>
+    <br>
+    <br>
+    <br>
+    <div class="player">
+      <video id="video-player" class="video-js vjs-default-skin" controls>
+        <!-- Video source and tracks go here -->
+      </video>
+    </div>
+  
+    <script>
+      // Initialize the Twitch embed player
+      new Twitch.Embed("video-player", {
+        width: "100%",
+        height: "100%",
+        channel: "tunedtv_official" // Replace with your Twitch channel name
+      });
+  
+      // Initialize the Video.js player
+      videojs("video-player", {}, function() {
+        // Player is ready
+        this.on("play", function() {
+          console.log("Video is playing");
+        });
+  
+        // Add any additional customizations or event listeners here
+      });
+    </script>
+  </div>
+
+  <div id="live-chat">
+    <!-- Live chat component goes here -->
+  </div>
+<br>
+  <footer>
+    &copy; 2023 TunedTV. All rights reserved.
+  </footer>
 
   <script src="js/main.js"></script>
   <script src="js/livechat.js"></script>
